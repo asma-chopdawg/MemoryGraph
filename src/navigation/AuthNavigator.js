@@ -1,4 +1,4 @@
-import {NavigationContainer} from '@react-navigation/native';
+import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack';
 import { ROUTES } from '../resource/constants';
 import SignIn from '../screens/AuthScreens/SignIn';
@@ -8,12 +8,12 @@ const Stack = createStackNavigator();
 
 function AuthNavigator() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{
+        headerShown:false
+      }}>
         <Stack.Screen name={ROUTES.AUTH.SIGN_IN_SCREEN} component={SignIn} />
         <Stack.Screen name={ROUTES.AUTH.SIGN_UP_SCREEN} component={SignUp} />
       </Stack.Navigator>
-    </NavigationContainer>
   );
 }
 
