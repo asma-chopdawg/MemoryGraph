@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import MainNavigator from './src/navigation/MainNavigator'
 import { LogBox } from 'react-native';
-import SplashScreen from './src/screens/AuthScreens/SplashScreen';
+import IntroScreen from './src/screens/AuthScreens/IntroScreen';
 
 
 export default function App() {
