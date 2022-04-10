@@ -3,7 +3,6 @@ import {
   ScrollView,
   View,
   Image,
-  TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
 import STYLE from '../../resource/styles';
@@ -11,7 +10,8 @@ import HomeHeader from '../../components/AppComponent/Home/HomeHeader';
 import {scale, verticalScale} from 'react-native-size-matters';
 import HomeButton from '../../components/AppComponent/Home/HomeButton';
 import HomeSeeAll from '../../components/AppComponent/Home/HomeSeeAll';
-import {COLORS, IMAGES} from '../../resource/constants';
+import { IMAGES} from '../../resource/constants';
+import HomePeopleMemories from '../../components/AppComponent/Home/HomePeopleMemories';
 
 export default function HomeScreen() {
   const [active, setActive] = useState(1);
@@ -61,33 +61,35 @@ export default function HomeScreen() {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <TouchableOpacity
-          style={
-            isActiveImage == 1
-              ? styles.image
-              : [styles.image, {borderWidth: 1, borderColor: COLORS.PRIMARY,padding:5}]
-          }
-          onPress={() => setIsActiveImage(1)}>
-          <Image
-            source={IMAGES.IMAGE1}
-            resizeMode="contain"
-            style={isActiveImage==1?styles.activeImg:styles.inActiveImg}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={
-            isActiveImage == 2
-              ? styles.image
-              : [styles.image, {borderWidth: 1, borderColor: COLORS.PRIMARY}]
-          }
-          onPress={() => setIsActiveImage(2)}>
-          <Image
-            source={IMAGES.IMAGE1}
-            resizeMode="contain"
-            style={{height: '100%'}}
-          />
-        </TouchableOpacity>
+        <HomePeopleMemories
+          onPress={() => setIsActiveImage(1)}
+          isActiveImage={isActiveImage == 1}
+          img={IMAGES.IMAGE1}
+        />
+        <HomePeopleMemories
+          onPress={() => setIsActiveImage(2)}
+          isActiveImage={isActiveImage == 2}
+          img={IMAGES.IMAGE2}
+        />
+        <HomePeopleMemories
+          onPress={() => setIsActiveImage(3)}
+          isActiveImage={isActiveImage == 3}
+          img={IMAGES.IMAGE3}
+        />
+        <HomePeopleMemories
+          onPress={() => setIsActiveImage(4)}
+          isActiveImage={isActiveImage == 4}
+          img={IMAGES.IMAGE4}
+        />
+        <HomePeopleMemories
+          onPress={() => setIsActiveImage(5)}
+          isActiveImage={isActiveImage == 5}
+          img={IMAGES.IMAGE5}
+        />
       </ScrollView>
+      <View style={styles.img}>
+        <Image source={IMAGES.IMAGE6} resizeMode="contain" />
+      </View>
     </ScrollView>
   );
 }
@@ -104,21 +106,9 @@ const styles = StyleSheet.create({
   imgContainer: {
     height: verticalScale(70),
     marginBottom: verticalScale(10),
-    borderWidth: 1,
   },
-  image: {
-    height: verticalScale(50),
-    width: verticalScale(50),
-    borderRadius: scale(20),
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  activeImg: {
-    height: '85%',
-    width: '85%',
-  },
-  inActiveImg: {
-    height: '100%',
-    width: '100%',
-  },
+  img:{
+    justifyContent:'center',alignItems:'center',
+    marginBottom:scale(20)
+  }
 });

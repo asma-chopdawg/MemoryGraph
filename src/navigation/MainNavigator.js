@@ -13,8 +13,8 @@ function MainNavigator() {
       <Stack.Navigator screenOptions={{
         headerShown:false
       }}>
-        {/* <Stack.Screen name={ROUTES.APP_NAVIGATOR} component={AppNavigator} /> */}
-        <Stack.Screen name={ROUTES.AUTH_NAVIGATOR} component={AuthNavigator} />
+        <Stack.Screen name={ROUTES.APP_NAVIGATOR} component={AppNavigator} />
+        {/* <Stack.Screen name={ROUTES.AUTH_NAVIGATOR} component={AuthNavigator} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

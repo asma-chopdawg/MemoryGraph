@@ -34,6 +34,9 @@ export const IMAGES={
     IMAGE3:require('../assets/img3.png'),
     IMAGE4:require('../assets/img4.png'),
     IMAGE5:require('../assets/img5.png'),
+    IMAGE6:require('../assets/img6.png'),
+
+
 }
 
 export const CONSTANTS={
