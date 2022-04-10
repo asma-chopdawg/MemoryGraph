@@ -2,6 +2,8 @@ import { scale } from "react-native-size-matters"
 
 export const COLORS={
     PRIMARY:"#F76631",
+    GRADIENT1:"#FF8649",
+    GRADIENT2:"#FF4D1F",
     GRAY:"#ACB4C1",
     WHITE:"#fff",
     BLACK:"#000",
@@ -26,7 +28,12 @@ export const IMAGES={
     SPLASH_IMAGE2:require('../assets/M2.png'),
     SPLASH_IMAGE3:require('../assets/M3.png'),
     MEMORIES:require('../assets/Memories.png'),
-
+    PROFILE:require('../assets/profile.png'),
+    IMAGE1:require('../assets/img1.png'),
+    IMAGE2:require('../assets/img2.png'),
+    IMAGE3:require('../assets/img3.png'),
+    IMAGE4:require('../assets/img4.png'),
+    IMAGE5:require('../assets/img5.png'),
 }
 
 export const CONSTANTS={
@@ -34,6 +41,7 @@ export const CONSTANTS={
 }
 
 export const ROUTES={
+    SPLASH_SCREEN:"SPLASH_SCREEN",
     AUTH_NAVIGATOR:"AUTH_NAVIGATOR",
     APP_NAVIGATOR:"APP_NAVIGATOR",
     AUTH:{

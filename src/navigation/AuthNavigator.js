@@ -11,6 +11,7 @@ function AuthNavigator() {
       <Stack.Navigator screenOptions={{
         headerShown:false
       }}>
+        <Stack.Screen name={ROUTES.SPLASH_SCREEN} component={SplashScreen} />
         <Stack.Screen name={ROUTES.AUTH.SIGN_IN_SCREEN} component={SignIn} />
         <Stack.Screen name={ROUTES.AUTH.SIGN_UP_SCREEN} component={SignUp} />
       </Stack.Navigator>
