@@ -5,6 +5,7 @@ export const COLORS={
     GRADIENT1:"#FF8649",
     GRADIENT2:"#FF4D1F",
     GRAY:"#ACB4C1",
+    LIGHT_GRAY:"#EAECF0",
     WHITE:"#fff",
     BLACK:"#000",
     SKY_BLUE:"rgba(66, 194, 255, 0.2)",
@@ -18,9 +19,10 @@ export const FONT_SIZE={
     X_SMALL:scale(10),
     SMALL:scale(11),
     MEDIUM:scale(12),
-    XX_LARGE:scale(13),
-    X_LARGE:scale(15),
-    LARGE:scale(17)
+    XXX_LARGE:scale(13),
+    XX_LARGE:scale(15),
+    X_LARGE:scale(17),
+    LARGE:scale(18)
 }
 
 export const IMAGES={
@@ -35,7 +37,14 @@ export const IMAGES={
     IMAGE4:require('../assets/img4.png'),
     IMAGE5:require('../assets/img5.png'),
     IMAGE6:require('../assets/img6.png'),
-
+    BALLOON:require('../assets/balloon.png'),
+    PINTEREST:require('../assets/Pinterest.png'),
+    SNAP_CHAT:require('../assets/Snapchat.png'),
+    TELEGRAM:require('../assets/Telegram.png'),
+    PHONE:require('../assets/phone.png'),
+    INBOX:require('../assets/inbox.png'),
+    SETTING:require('../assets/setting.png'),
+    
 
 }
 
@@ -52,6 +61,10 @@ export const ROUTES={
         SIGN_UP_SCREEN:"SIGN_UP_SCREEN",
     },
     APP:{
-        HOME_SCREEN:"HOME_SCREEN"
+        HOME_SCREEN:"HOME_SCREEN",
+        IMAGE_DETAIL_SCREEN:"IMAGE_DETAIL_SCREEN",
+        SETTING_SCREEN:"SETTING_SCREEN",
+
+
     }
 }

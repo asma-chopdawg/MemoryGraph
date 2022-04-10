@@ -3,8 +3,8 @@ import React from 'react';
 import {COLORS} from '../../../resource/constants';
 import LinearGradient from 'react-native-linear-gradient';
 import { scale, verticalScale } from 'react-native-size-matters';
-
-export default function HomeButton({active, onPress,btnText}) {
+import Icon from 'react-native-vector-icons/SimpleLineIcons'
+export default function HomeButton({active, onPress,btnText,icon,customStyle}) {
   return (
     <TouchableOpacity onPress={onPress}>
       <LinearGradient
@@ -15,7 +15,8 @@ export default function HomeButton({active, onPress,btnText}) {
         }
         start={{x: 0, y: 0}}
         end={{x: 1, y: 0}}
-        style={[styles.linearGradient,{borderWidth:active?null:1}]}>
+        style={[styles.linearGradient,customStyle,{borderWidth:active?null:1}]}>
+          {icon && <Icon name="logout" color={COLORS.WHITE} style={{marginRight:10}}/>}
         <Text style={active ? styles.activeBtnText : styles.inactiveBtnText}>
           {btnText}
         </Text>
@@ -29,10 +30,12 @@ const styles = StyleSheet.create({
         height: verticalScale(30),
         justifyContent: 'center',
         alignItems: 'center',
-        paddingHorizontal: scale(12),
+        paddingHorizontal: scale(10),
         borderRadius: scale(5),
         marginRight: scale(6),
         borderColor: COLORS.GRAY,
+        flexDirection:'row',
+
       },
       activeBtnText: {
         color: COLORS.WHITE,
