@@ -1,7 +1,7 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 import { ROUTES } from '../resource/constants';
-import HomeScreen from '../screens/AppScreens/HomeScreen';
+import HomeScreen from '../screens/AppScreens/Home/HomeScreen';
 
 const Stack = createStackNavigator();
 
