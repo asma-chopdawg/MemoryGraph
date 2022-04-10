@@ -5,13 +5,13 @@ import {
   Image,
 } from 'react-native';
 import React, {useState} from 'react';
-import STYLE from '../../resource/styles';
-import HomeHeader from '../../components/AppComponent/Home/HomeHeader';
+import STYLE from '../../../resource/styles';
+import HomeHeader from '../../../components/AppComponent/Home/HomeHeader';
 import {scale, verticalScale} from 'react-native-size-matters';
-import HomeButton from '../../components/AppComponent/Home/HomeButton';
-import HomeSeeAll from '../../components/AppComponent/Home/HomeSeeAll';
-import { IMAGES} from '../../resource/constants';
-import HomePeopleMemories from '../../components/AppComponent/Home/HomePeopleMemories';
+import HomeButton from '../../../components/AppComponent/Home/HomeButton';
+import HomeSeeAll from '../../../components/AppComponent/Home/HomeSeeAll';
+import { IMAGES} from '../../../resource/constants';
+import HomePeopleMemories from '../../../components/AppComponent/Home/HomePeopleMemories';
 
 export default function HomeScreen() {
   const [active, setActive] = useState(1);
