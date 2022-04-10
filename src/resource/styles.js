@@ -4,6 +4,7 @@ import { COLORS, FONT_SIZE } from './constants'
 const STYLE = StyleSheet.create({
     container:{
         flex:1,
+        backgroundColor:COLORS.WHITE
     },
     header: {
         flex: 0.5,
