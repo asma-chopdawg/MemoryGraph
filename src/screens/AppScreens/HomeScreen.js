@@ -1,14 +1,21 @@
-import {StyleSheet, ScrollView, View,Image} from 'react-native';
+import {
+  StyleSheet,
+  ScrollView,
+  View,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import React, {useState} from 'react';
 import STYLE from '../../resource/styles';
 import HomeHeader from '../../components/AppComponent/Home/HomeHeader';
 import {scale, verticalScale} from 'react-native-size-matters';
 import HomeButton from '../../components/AppComponent/Home/HomeButton';
 import HomeSeeAll from '../../components/AppComponent/Home/HomeSeeAll';
-import { IMAGES } from '../../resource/constants';
+import {COLORS, IMAGES} from '../../resource/constants';
 
 export default function HomeScreen() {
   const [active, setActive] = useState(1);
+  const [isActiveImage, setIsActiveImage] = useState(1);
   return (
     <ScrollView style={[STYLE.container, {paddingHorizontal: scale(14)}]}>
       <HomeHeader />
@@ -46,7 +53,7 @@ export default function HomeScreen() {
         />
       </ScrollView>
       <View style={styles.photoGrid}></View>
-        <HomeSeeAll/>
+      <HomeSeeAll />
       <ScrollView
         style={styles.imgContainer}
         horizontal
@@ -54,9 +61,33 @@ export default function HomeScreen() {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-          <Image source={IMAGES.IMAGE1} style={{height:verticalScale(45),width:verticalScale(45)}}/>
-          
-        </ScrollView>
+        <TouchableOpacity
+          style={
+            isActiveImage == 1
+              ? styles.image
+              : [styles.image, {borderWidth: 1, borderColor: COLORS.PRIMARY,padding:5}]
+          }
+          onPress={() => setIsActiveImage(1)}>
+          <Image
+            source={IMAGES.IMAGE1}
+            resizeMode="contain"
+            style={isActiveImage==1?styles.activeImg:styles.inActiveImg}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={
+            isActiveImage == 2
+              ? styles.image
+              : [styles.image, {borderWidth: 1, borderColor: COLORS.PRIMARY}]
+          }
+          onPress={() => setIsActiveImage(2)}>
+          <Image
+            source={IMAGES.IMAGE1}
+            resizeMode="contain"
+            style={{height: '100%'}}
+          />
+        </TouchableOpacity>
+      </ScrollView>
     </ScrollView>
   );
 }
@@ -70,9 +101,24 @@ const styles = StyleSheet.create({
     height: verticalScale(270),
     borderWidth: 1,
   },
-  imgContainer:{
+  imgContainer: {
     height: verticalScale(70),
     marginBottom: verticalScale(10),
-    borderWidth:1
-  }
+    borderWidth: 1,
+  },
+  image: {
+    height: verticalScale(50),
+    width: verticalScale(50),
+    borderRadius: scale(20),
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  activeImg: {
+    height: '85%',
+    width: '85%',
+  },
+  inActiveImg: {
+    height: '100%',
+    width: '100%',
+  },
 });
