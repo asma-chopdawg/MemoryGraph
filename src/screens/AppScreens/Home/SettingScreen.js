@@ -8,7 +8,7 @@ import HomeButton from '../../../components/AppComponent/Home/HomeButton';
 import HomeFooter from '../../../components/AppComponent/Home/HomeFooter';
 import MasonryList from "react-native-masonry-list";
 
-export default function Setting() {
+export default function SettingScreen() {
   return (
     <View style={STYLE.container}>
       <View style={{flex: 0.6, paddingHorizontal: scale(10)}}>

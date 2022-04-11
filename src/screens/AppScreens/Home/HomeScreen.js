@@ -13,7 +13,7 @@ import HomeHeader from '../../../components/AppComponent/Home/HomeHeader';
 import {  verticalScale } from 'react-native-size-matters';
 import HomeButton from '../../../components/AppComponent/Home/HomeButton';
 import HomeSeeAll from '../../../components/AppComponent/Home/HomeSeeAll';
-import { IMAGES } from '../../../resource/constants';
+import { IMAGES, ROUTES } from '../../../resource/constants';
 import HomePeopleMemories from '../../../components/AppComponent/Home/HomePeopleMemories';
 import MasonryList from "react-native-masonry-list";
 
@@ -37,10 +37,10 @@ const HomeScreenImages = [
     "uri": require('../../../assets/img5.png')
   },
 ]
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
   const [active, setActive] = useState(1);
   const [isActiveImage, setIsActiveImage] = useState(1);
-  const [visible, setIsVisible] = useState(false)
+  
   const  RenderHomeButton = ({ item, index }) => {
     return (
       <HomeButton
@@ -103,7 +103,7 @@ export default function HomeScreen() {
           renderIndividualHeader={(data) => {
             return (
               <TouchableWithoutFeedback
-                onPress={() => console.log('i am pressed')}>
+                onPress={() => navigation.navigate(ROUTES.APP.IMAGE_DETAIL_SCREEN)}>
                 <View style={[styles.masonryHeader, {
                   width: data.masonryDimensions.width,
                   margin: data.masonryDimensions.gutter / 2

@@ -3,18 +3,17 @@ import React from 'react';
 import STYLE from '../../../resource/styles';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
-import {COLORS, FONT_SIZE, IMAGES} from '../../../resource/constants';
+import {COLORS, FONT_SIZE, IMAGES, ROUTES} from '../../../resource/constants';
 import CommonHeader from '../../../components/common/CommonHeader';
 import {scale, verticalScale} from 'react-native-size-matters';
-export default function ImageDetailScreen() {
+export default function ImageDetailScreen({navigation}) {
   return (
     <View style={[STYLE.container, {backgroundColor: COLORS.WHITE}]}>
       <View style={{flex: 1}}>
         <ImageBackground
           source={IMAGES.BALLOON}
-          //   resizeMode="contain"
           style={{flex: 1, paddingLeft: scale(10)}}>
-          <CommonHeader onPress={() => alert('goback')} />
+          <CommonHeader onPress={() => navigation.goBack()} />
         </ImageBackground>
       </View>
       <View style={styles.content}>
@@ -41,7 +40,7 @@ export default function ImageDetailScreen() {
           Share with:
         </Text>
         <View style={{flexDirection: 'row'}}>
-        <Image
+          <Image
             source={IMAGES.SNAP_CHAT}
             resizeMode="contain"
             style={styles.shareImage}
@@ -103,9 +102,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     justifyContent: 'space-around',
   },
-  shareImage:{
+  shareImage: {
     height: verticalScale(20),
-     width: verticalScale(20),
-     marginRight:scale(10)
-  }
+    width: verticalScale(20),
+    marginRight: scale(10),
+  },
 });

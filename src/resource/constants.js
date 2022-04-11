@@ -36,6 +36,7 @@ export const IMAGES={
     IMAGE3:require('../assets/img3.png'),
     IMAGE4:require('../assets/img4.png'),
     IMAGE5:require('../assets/img5.png'),
+    IMAGE6:require('../assets/img6.png'),
     IMAGE14:require('../assets/14.png'),
     IMAGE15:require('../assets/15.png'),
     IMAGE16:require('../assets/16.png'),
@@ -67,7 +68,13 @@ export const ROUTES={
         SIGN_UP_SCREEN:"SIGN_UP_SCREEN",
     },
     APP:{
+        HOME_TAB:"HOME_TAB",
+        GRAPH_TAB:"GRAPH_TAB",
+        MAIN_TAB:"MAIN_TAB",
+        FAVORITE_TAB:"FAVORITE_TAB",
+        SETTING_TAB:"SETTING_TAB",
         HOME_SCREEN:"HOME_SCREEN",
+        HOME_SCREENS_STACK:"HOME_SCREENS_STACK",
         IMAGE_DETAIL_SCREEN:"IMAGE_DETAIL_SCREEN",
         SETTING_SCREEN:"SETTING_SCREEN",
 
