@@ -41,7 +41,7 @@ export default function HomeScreen() {
   const [active, setActive] = useState(1);
   const [isActiveImage, setIsActiveImage] = useState(1);
   const [visible, setIsVisible] = useState(false)
-  const RenderHomeButton = ({ item, index }) => {
+  const  RenderHomeButton = ({ item, index }) => {
     return (
       <HomeButton
         active={active === index}
@@ -116,9 +116,6 @@ export default function HomeScreen() {
               </TouchableWithoutFeedback>
             );
           }}
-        // onEndReached={() => {
-        //     this.addMoreImages(moreImages);
-        // }}
         />
       </View>
       <HomeSeeAll />

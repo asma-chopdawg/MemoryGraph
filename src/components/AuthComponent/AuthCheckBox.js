@@ -3,20 +3,19 @@ import React, {useState} from 'react';
 import {scale, verticalScale} from 'react-native-size-matters';
 import {COLORS, FONT_SIZE} from '../../resource/constants';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-export default function AuthCheckBox({onPress}) {
-  const [toggleCheckBox, setToggleCheckBox] = useState(false);
+export default function AuthCheckBox({toggleCheckBox,onPress,forgotPassword}) {
   return (
     <View style={styles.container}>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <Icon
           name={toggleCheckBox ? 'checkbox-marked' : 'checkbox-blank-outline'}
-          onPress={() => setToggleCheckBox(!toggleCheckBox)}
+          onPress={onPress}
           size={23}
           color={COLORS.GRAY}
         />
         <Text style={{marginLeft: scale(7),fontSize:FONT_SIZE.SMALL}}>Remeber me</Text>
       </View>
-      <Text onPress={onPress} style={styles.ForgotPassword}>
+      <Text onPress={forgotPassword} style={styles.ForgotPassword}>
         Forgot password?
       </Text>
     </View>

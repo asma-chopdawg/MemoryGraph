@@ -120,15 +120,17 @@ const styles = StyleSheet.create({
   slide: {
     flex: 1,
     justifyContent: 'center',
-    paddingHorizontal: scale(10)
+    paddingHorizontal: scale(10),
+    
   },
   imgContainer: {
-    flex: 0.45,
-    justifyContent: 'center',
+    flex: 0.7,
+    justifyContent: 'flex-end',
     alignItems: 'center',
+    paddingBottom:verticalScale(40)
   },
   content: {
-    flex: 0.1,
+    flex: 0.15,
     justifyContent: 'center',
   },
   title: {
@@ -145,6 +147,6 @@ const styles = StyleSheet.create({
     flex: 0.15,
     justifyContent: 'space-between',
     flexDirection: 'row',
-    paddingHorizontal:scale(12)
+    paddingHorizontal:scale(12),
   },
 });

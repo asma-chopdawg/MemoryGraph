@@ -12,8 +12,8 @@ function AppNavigator() {
     <Stack.Navigator screenOptions={{
       headerShown:false
     }}>
-      {/* <Stack.Screen name={ROUTES.APP.HOME_SCREEN} component={HomeScreen} /> */}
-      {/* <Stack.Screen name={ROUTES.APP.IMAGE_DETAIL_SCREEN} component={ImageDetailScreen} /> */}
+     {/* <Stack.Screen name={ROUTES.APP.HOME_SCREEN} component={HomeScreen} /> */}
+     {/*   <Stack.Screen name={ROUTES.APP.IMAGE_DETAIL_SCREEN} component={ImageDetailScreen} /> */}
       <Stack.Screen name={ROUTES.APP.SETTING_SCREEN} component={Setting} />
     </Stack.Navigator>
   );

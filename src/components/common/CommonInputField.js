@@ -12,7 +12,8 @@ export default function CommonInputField({
   secureTextEntry,
   icon,
   secure,
-  onPress
+  onPress,
+  value
 }) {
   return (
     <View style={{marginTop:verticalScale(12)}}>
@@ -26,6 +27,7 @@ export default function CommonInputField({
             placeholder={placeholder}
             onChangeText={onChangeText}
             secureTextEntry={secureTextEntry}
+            value={value}
           />
         </View>
         <TouchableOpacity style={styles.iconContainer} onPress={onPress}>

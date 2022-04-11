@@ -18,6 +18,16 @@ import AuthCheckBox from '../../components/AuthComponent/AuthCheckBox';
 
 export default function SignIn({navigation}) {
   const [secureText, setSecureText] = useState(false);
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+  const [toggleCheckBox, setToggleCheckBox] = useState(false);
+
+  const _signin = () => {
+    if (userName === '') return alert('Please Enter username');
+    if (password === '') return alert('Please Enter password');
+    navigation.navigate(ROUTES.APP_NAVIGATOR)
+  };
+
   return (
     <View style={STYLE.container}>
       <View style={STYLE.header}>
@@ -25,7 +35,7 @@ export default function SignIn({navigation}) {
           source={IMAGES.MEMORIES}
           resizeMode="contain"
           style={{flex: 1}}>
-          <AntDesign onPress={() => alert('hi')} name="leftcircleo" size={25} />
+          <AntDesign onPress={() => navigation.goBack()} name="leftcircleo" size={25} />
         </ImageBackground>
       </View>
       <KeyboardAwareScrollView style={STYLE.content}>
@@ -35,6 +45,8 @@ export default function SignIn({navigation}) {
           label={'Username'}
           iconName={'user'}
           placeholder={'User name'}
+          value={userName}
+          onChangeText={text => setUserName(text)}
         />
         <CommonInputField
           Icon={SimpleLineIcons}
@@ -42,14 +54,18 @@ export default function SignIn({navigation}) {
           iconName={'lock'}
           placeholder={'Enter password'}
           icon
+          value={password}
+          onChangeText={text => setPassword(text)}
           secureTextEntry={secureText}
           onPress={() => setSecureText(!secureText)}
+
         />
-        <AuthCheckBox />
+        <AuthCheckBox onPress={() => setToggleCheckBox(!toggleCheckBox)} toggleCheckBox={toggleCheckBox}/>
         <CommonButton
           btnText={'Log In'}
           customStyle={STYLE.customBtnStyle}
           textStyle={STYLE.btnTextStyle}
+          onPress={_signin}
         />
         <AuthText text={'Don’t have an account?'} text1={' Register'} onPress={()=>navigation.navigate(ROUTES.AUTH.SIGN_UP_SCREEN)}/>
       </KeyboardAwareScrollView>

@@ -6,6 +6,8 @@ import {COLORS, FONT_SIZE, IMAGES} from '../../../resource/constants';
 import {scale, verticalScale} from 'react-native-size-matters';
 import HomeButton from '../../../components/AppComponent/Home/HomeButton';
 import HomeFooter from '../../../components/AppComponent/Home/HomeFooter';
+import MasonryList from "react-native-masonry-list";
+
 export default function Setting() {
   return (
     <View style={STYLE.container}>
@@ -23,6 +25,62 @@ export default function Setting() {
             <HomeButton btnText={'Edit'} active={true} />
           </View>
         </View>
+        <>
+        <MasonryList
+         columns={3}
+        //  rerender={true}
+         imageContainerStyle={{ padding: 10 }}
+             images={[
+
+              {
+                source: IMAGES.IMAGE14,
+                dimensions: { width: 20, height: 20 },
+                title: "Puppies",
+                subTitle: "16/04/2021 - Balloon",
+              },
+              {
+                source:  IMAGES.IMAGE15,
+                dimensions: { width: 20, height: 15 },
+                title: "cakes",
+                subTitle: "17/04/2021 - Balloon"
+              },
+              {
+                source:  IMAGES.IMAGE17,
+                dimensions: { width: 10, height: 10 },
+                title: "Eleanor",
+                subTitle: "19/04/2021 - Balloon"
+              },
+              {
+                source:  IMAGES.IMAGE16,
+                dimensions: { width: 9, height: 20 },
+                title: "23 yrs",
+                subTitle: "18/04/2021 - Balloon"
+  
+              },
+              
+              {
+                source:  IMAGES.IMAGE18,
+                dimensions: { width: 10, height: 10 },
+                title: "Eleanor",
+                subTitle: "19/04/2021 - Balloon"
+              },
+  
+              {
+                source:  IMAGES.IMAGE19,
+                dimensions: { width: 20, height: 20 },
+                title: "Eleanor",
+                subTitle: "19/04/2021 - Balloon"
+              },
+              {
+                source:  IMAGES.IMAGE20,
+                dimensions: { width: 30, height: 30 },
+                title: "Eleanor",
+                subTitle: "19/04/2021 - Balloon"
+              },
+  
+            ]}
+        />
+        </>
       </View>
       <View style={styles.footer}>
         <HomeFooter img={IMAGES.INBOX} text={'robertfox@email.com'} />
